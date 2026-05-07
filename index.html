@@ -10,6 +10,7 @@
             padding: 0; 
             box-sizing: border-box; 
             border: none;
+            overflow-x: hidden;
         }
         
         :root {
@@ -22,7 +23,7 @@
             height: 100vh;
             display: flex;
             background-color: #fff;
-            font-family: 'Pretendard', sans-serif;
+            font-family: 'Fontt';
             overflow: hidden;
             padding: var(--gap-size);
             gap: var(--gap-size);
@@ -30,7 +31,7 @@
 
         /* 왼쪽 사이드바 */
         .sidebar {
-            width: 250px; 
+            width: 300px; 
             height: 100%;
             background-color: var(--mint-color);
             flex-shrink: 0;
@@ -65,6 +66,7 @@
             font-size: 36px;
             margin-bottom: 7px;
             z-index: 10;
+            font-family: 'Font';
         }
 
         #layers-wrapper {
@@ -102,7 +104,8 @@
             justify-content: center;
             align-items: center;
             padding: 0 35px;
-            font-size: 36px;
+            font-family: 'Font';
+            font-size: 38px;
             white-space: nowrap;
             cursor: pointer;
             animation: slide-up-smooth 0.6s cubic-bezier(0.23, 1, 0.32, 1) both;
@@ -121,21 +124,71 @@
             flex-shrink: 0;
             transition: background-color 0.4s ease;
         }
+        
+        .info-container {
+        width: 100%;
+        padding: 20px;
+        box-sizing: border-box;
+        }
 
-        #def-title { font-size: 36px; margin-bottom: 12px; }
-        #def-text { font-size: 26px; line-height: 1.6; 
+        .info-item {
+        margin-bottom: 8px; 
+        }
+
+        .info-title {
+        width: 100%;
+        background: none;
+        border: none;
+        text-align: left;
+        padding: 10px 0;
+        font-size: 36px;
+        font-weight: normal;
+        cursor: pointer;
+        display: block;
+        font-family: 'Font';
+        }
+
+        .info-content {
+        max-height: 0; 
+        overflow: hidden;
+        transition: max-height 0.3s ease-out; 
+        font-family: 'Fontt';
+         word-break: keep-all;
+        hyphens: none; 
+        }
+
+        .info-content p {
+        padding: 10px 0 20px 0;
+        margin: 0;
+        line-height: 1.6;
+        color: #000000;
+        font-family: 'Fontt';
+        }
+
+        .info-item.active .info-content {
+        max-height: 500px; /* 설명의 길이에 따라 적절히 조절 */
+        }
+
+        #def-title { font-size: 42px; margin-bottom: 12px; font-family: 'Font';}
+        #def-text { font-size: 18px; line-height: 1.8; 
         word-break: keep-all;
-        hyphens: none; }
-        @font-face {
-    font-family: 'Font';
-    src: url('./1045.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-        }
-        body {
-        font-family: 'Font'
-        }
+        hyphens: none; 
+        font-family: 'Fontt';}
 
+        @font-face { 
+        font-family: 'Font';
+        src: url('./1045.ttf') format('truetype');
+        font-weight: normal;
+        font-style: normal;
+            }
+            
+        @font-face {
+            font-family: 'Fontt';
+            src: url('./1046.otf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+                }
+            
         .group-1 { background-color: #79ffb2 ; }
         .group-2 { background-color: #56ceac ; }
         .group-3 { background-color: #94fadf ; }
@@ -146,7 +199,25 @@
 </head>
 <body>
 
-    <div class="sidebar"></div>
+    <div class="sidebar">
+        <div class="info-container">
+  <!-- 첫 번째 단어 -->
+  <div class="info-item">
+    <button class="info-title">등산합시다!</button>
+    <div class="info-content">
+      <p>이 웹은 내가 정의한 등산의 개념에 맞춰 단어들을 새롭게 정의하는 장소이다. 나는 등산을 오르락 내리락하고 목표가 분명하지만 힘든, 정유주, 즉 내가 싫어하는 모든 것이라고 정의내렸다. 이에 따라 각각의 단어들은 등산인 것, 등산 같은 것, 등산인지 모르겠는 것, 등산 같지 않은 것, 등산이 아닌 것으로 나눠진다. 등산의 개념, 단어의 종류와 설명까지 이 웹의 모든 텍스트는 내 주관에 따라 작성되었다. </p>
+    </div>
+  </div>
+
+  <!-- 두 번째 단어 -->
+  <div class="info-item">
+    <button class="info-title">정유주</button>
+    <div class="info-content">
+      <p>이 웹의 제작자이다. 음악, 시트콤, 닌텐도 등 수많은 관심사를 냅두고 별로 관심도 없는 등산에 대한 웹을 제작했다. 이유는 본인도 모른다.</p>
+    </div>
+  </div>
+</div></div>
+    
 
     <div class="main-container">
         <div id="mountain-canvas">
@@ -169,7 +240,7 @@
         { word: "홍문관의 엘리베이터", def: "홍문관의 엘리베이터는 등산이다. <br>엘리베이터는 1층에서 고층 또는 지하로 사람이나 물자의 이동을 쉽게 하기 위해 만든, 수직 상승 수직 하강하는 기계이다. 대부분의 건물에는 엘리베이터가 설치되어 있는데 그 중 홍문관의 엘리베이터는 내가 타본 엘리베이터 중에 가장 끔찍하다. 모든 엘리베이터는 오르락 내리락하고 목표가 분명하고 굉장히 편리한 기계이다. 하지만 홍문관의 엘리베이터는 항상 붐비기 때문에 나를 힘들게 하고, 이런 이유로 나는 홍문관의 엘리베이터를 싫어한다. 따라서 홍문관의 엘리베이터는 등산이다.", group: 1 },
         { word: "시험", def: "시험은 등산이다. <br>시험은 재능이나 실력 따위를 일정한 절차에 따라 검사하고 평가하는 것으로, 일반적으로 대한민국의 학교에서는 학기 중에 한 번, 학기말에 한 번 보는데 각각 중간고사와 기말고사라고 부른다. 시험을 통해 받은 성적은 오르기도 하고 내려가기도 하며, 목표가 분명하고 나를 힘들게 한다. 대부분의 사람이 그렇듯이 나 또한 시험을 싫어하기 때문에 시험은 등산이다.", group: 1 },
         { word: "카멜레온 줄자", def: "카멜레온 줄자는 등산이다. <br>카멜레온 줄자는 줄자 중에서 자 부분이 유연한 금속으로 이루어져 있고 스프링을 통해 자가 자동으로 감기는 제품을 일컫는 단어이다. 카멜레온 줄자의 자 부분은 오르락 내리락거리며, 사용하는 목표가 분명하다. 자 부분이 얇거나 날카로운 경우 자를 감는 도중에 베일 수 있는데, 이 때문에 카멜레온 줄자는 나를 힘들게 하며 나는 카멜레온 줄자를 싫어한다. 따라서 카멜레온 줄자는 등산이다.", group: 1 },
-        { word: "복층 자취방", def: "복층 자취방은 등산이다. 복층 자취방은 1층과 2층을 나눠쓰는 구조로 공간 분리가 쉽다는 장점이 있지만 계단을 오르내려야 한다는 매우 큰 단점이 있다. 우리집은 아니지만 친구가 복층 자취방에 살아 최근 밥 먹듯이 놀러가고 있다. 복층 자취방에 살면 하루종일 계단을 오르내려야 하며, 이런 단점을 감수하고 사는 만큼 사는 목적도 분명한 것 같다. 하지만 복층의 계단은 나를 정말 힘들게 하며 이런 이유로 나는 복층을 싫어한다. 따라서 복층 자취방은 등산이다", group: 1 },
+        { word: "복층 자취방", def: "복층 자취방은 등산이다. <br>복층 자취방은 1층과 2층을 나눠쓰는 구조로 공간 분리가 쉽다는 장점이 있지만 계단을 오르내려야 한다는 매우 큰 단점이 있다. 우리집은 아니지만 친구가 복층 자취방에 살아 최근 밥 먹듯이 놀러가고 있다. 복층 자취방에 살면 하루종일 계단을 오르내려야 하며, 이런 단점을 감수하고 사는 만큼 사는 목적도 분명한 것 같다. 하지만 복층의 계단은 나를 정말 힘들게 하며 이런 이유로 나는 복층을 싫어한다. 따라서 복층 자취방은 등산이다", group: 1 },
         { word: "따릉이", def: "따릉이는 등산인 것 같다. <br>따릉이는 서울특별시에서 2015년부터 정식 운행을 시작한 무인 공공자전거 대여 서비스이다. 대여 가능한 장소가 꽤나 많고 가격도 싸 평소 애용한다. 따릉이는 오르락 내리락거릴 수 있고 이용 목표가 분명하며, 탈 때 힘들기도 하지만 내가 좋아하기 때문에 따릉이는 등산인 것 같다.", group: 2 },
         { word: "비둘기", def: "비둘기는 등산인 것 같다. <br>비둘기는 비둘기과에 속하는 새의 통칭으로 전 세계 대부분의 대도시에서 볼 수 있는 매우 흔한 새이다. 일단은 평화의 상징이지만 외모와 습성 때문에 기피종으로 전락하고 말았다. 비둘기는 오르락 내리락거리지만 삶의 목표가 분명해보이지는 않고, 최근 우리집 창틀에 둥지를 지으려고 해서 나를 매우 힘들게 한다. 이런 이유로 나는 비둘기를 싫어하기 때문에 비둘기는 등산인 것 같다.", group: 2 },
         { word: "맥주", "def": "맥주는 등산인 것 같다. <br>맥주는 알코올성 음료 중 하나로, 엿기름과 물을 가열한 후 향과 쓴 맛이 나게 한 뒤 발효해서 만든다. 맥주는 오르락 내리락하고 마시는 분명한 이유도 있다. 하지만 도수가 낮아 나를 힘들게 하지는 않고 내가 좋아하는 술이기 때문에 맥주는 등산인 것 같다.", group: 2 },
@@ -196,7 +267,7 @@
         { word: "저스틴 비버", def: "저스틴 비버는 등산이 아닌 것 같다. <br>저스틴 비버는 캐나다의 싱어송라이터이자 프로듀서이다. 좋은 쪽으로든 나쁜 쪽으로든 세계적으로 핫한 아티스트로, 2026 코첼라 페스티벌을 인상깊게 봐서 이 웹에 추가했다. 저스틴 비버의 위상은 오르락 내리락했고, 정확히 알 수는 없지만 분명한 목표가 있어 보이지는 않는다. 나를 딱히 힘들게 하지 않고 꽤나 좋아하는 아티스트이기 때문에 저스틴 비버는 등산이 아닌 것 같다.", group: 4 },
         { word: "콘서트", def: "콘서트는 등산이 아닌 것 같다. <br>콘서트는 음악을 상연하는 실시간 공연으로, 나의 가장 큰 취미 중 하나다. 콘서트는 나를 매우 오르락 내리락하게 만들고, 콘서트를 가게 되는 분명한 목표 또한 있다. 하지만 나를 힘들게 하기는 커녕 즐겁게 하고 내가 매우 좋아하는 것이기 때문에 콘서트는 등산이 아닌 것 같다.", group: 4 },
         { word: "쿠팡플레이", def: "쿠팡플레이는 등산이 아닌 것 같다. <br>쿠팡플레이는 쿠팡에서 운영하는 OTT 서비스이다. 가격도 싼 편이고 내가 좋아하는 컨텐츠들이 많아 가장 애용하는 OTT다. 쿠팡플레이는 오르락 내리락하지는 않지만 사용 목표가 분명하다. 나를 전혀 힘들게 하지 않고 내가 좋아하는 OTT이기 때문에 쿠팡플레이는 등산이 아닌 것 같다.", group: 4 },
-        { word: "키위요거트스무디", def: "키위요거트 스무디는 등산이 아닌 것 같다. <br>키위요거트 스무디는 카페 나무에 파는 음료 중 하나로, 내가 가장 좋아하는 메뉴 중 하나이다. 키위요거트 스무디는 내려가기만 하지만 마시는 목적은 분명하다. 또한 나를 힘들게 하지않고 내가 좋아하는 메뉴이기 때문에 키위요거트 스무디는 등산이 아닌 것 같다.", group: 4 },
+        { word: "키위요거트스무디", def: "키위요거트 스무디는 등산이 아닌 것 같다. <br>키위요거트 스무디는 카페 나무에 파는 음료 중 하나로, 내가 가장 좋아하는 메뉴 중 하나이다. 내 친구 홍아인이 추천해준 뒤로 매일 마시고 있다. 키위요거트 스무디는 내려가기만 하지만 마시는 목적은 분명하다. 또한 나를 힘들게 하지않고 내가 좋아하는 메뉴이기 때문에 키위요거트 스무디는 등산이 아닌 것 같다.", group: 4 },
         { word: "거미여인의 키스", def: "거미여인의 키스는 등산이 아니다. <br>거미여인의 키스는 아르헨티나의 소설가 마누엘 푸익의 저서로, 이번 학기 내가 수강하고 있는 〈문학으로 읽는 사랑의 윤리〉라는 수업에서 다루고 있는 소설이다. 거미여인의 키스는 오르내리지 않으며, 책을 절반 정도 읽은 시점에서 이 소설의 목표는 전혀 모르겠다. 또한 나를 힘들게 하지도 않고 현재 꽤나 재밌게 읽고 있으니 거미여인의 키스는 등산이 아니다.", group: 5 },
         { word: "톰 요크", def: "톰 요크는 등산이 아니다. <br>톰 요크는 영국의 싱어송라이더로 밴드 라디오헤드의 리더이다. 톰 요크는 딱히 오르내리지 않는 것 같고 분명한 목적도 없는 것 같다. 또한 나를 힘들게 하지 않고 내가 좋아하는 아티스트이기 때문에 톰 요크는 등산이 아니다.", group: 5 },
         { word: "누타입", def: "누타입은 등산이 아니다. <br>누타입은 세명의 여성 디자이너로 구성된 타입 파운드리이다. 올해 2월 1년 약정을 보지 못하고 누타입 월간 구독권을 결제하여, 2월 이후로 누타입 폰트를 사용할 일이 없지만 매달 23500원 씩 나가고 있다. 누타입은 오르락 내리락거리지 않고 지금 나는 누타입을 사용할 목적은 없다. 매달 23500원의 지출은 슬프지만 나를 힘들게 하지는 않는다. 그렇지만 누타입을 싫어하는 것은 아니기 때문에 누타입은 등산이 아니다.", group: 5 },
@@ -272,6 +343,17 @@
         titleDisp.innerText = "등산";
         textDisp.innerHTML = "산에 오르는 것. 취미활동 목적의 놀이, 신체단련을 위한 운동이나 스포츠, 탐험 등의 전반을 아우르는 말이다. <br>한국어의 '등산'은 지칭 범위가 넓다. 등산에서 말하는 '산'이라는 것은 산이라 부르기도 애매한 언덕같은 동네 뒷산부터 극한의 오지인 히말라야 고산까지를 아우르는 광범위한 장소인데, 범위가 넓은 만큼 가볍게 즐기는 일반인부터 전문적인 직업으로 고산을 탐방하는 프로 등산인까지 존재하는 폭넓은 취미이다. 나는 오르락 내리락하고 목표가 분명하지만 힘든, 정유주, 즉 내가 싫어하는 모든 것을 등산이라 칭하기로 했다. 그렇다면 무엇이 등산일까.";
     }
+  document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.info-title').forEach(title => {
+    title.addEventListener('click', () => {
+      const item = title.parentElement;
+      
+      // 클릭한 항목의 'active' 클래스를 토글(있으면 제거, 없으면 추가)
+      // 이 방식은 다른 항목의 상태에 영향을 주지 않습니다.
+      item.classList.toggle('active');
+    });
+  });
+});
 </script>
 </body>
 </html>
