@@ -42,7 +42,6 @@
             display: flex;
             flex-direction: column;
             height: 100%;
-            gap: var(--gap-size);
         }
 
         #mountain-canvas {
@@ -84,9 +83,6 @@
             width: 100%;
         }
 
-        .layer:last-child {
-            margin-bottom: 0;
-        }
 
         @keyframes slide-up-smooth {
             0% { transform: translateY(60px); opacity: 0; }
@@ -120,14 +116,14 @@
             height: 280px;
             background-color: var(--mint-color);
             color: #000;
-            padding: 30px 35px;
+            padding: 35px 100px 0px 35px;
             flex-shrink: 0;
             transition: background-color 0.4s ease;
         }
         
         .info-container {
         width: 100%;
-        padding: 20px;
+        padding: 30px;
         box-sizing: border-box;
         }
 
@@ -338,7 +334,10 @@
         layerCount = 0;
         availableWords = [...wordDataList];
         infoPanel.style.backgroundColor = "var(--mint-color)";
+        titleDisp.innerText = "등산";
+        textDisp.innerHTML = "산에 오르는 것. 취미활동 목적의 놀이, 신체단련을 위한 운동이나 스포츠, 탐험 등의 전반을 아우르는 말이다. <br>한국어의 '등산'은 지칭 범위가 넓다. 등산에서 말하는 '산'이라는 것은 산이라 부르기도 애매한 언덕같은 동네 뒷산부터 극한의 오지인 히말라야 고산까지를 아우르는 광범위한 장소인데, 범위가 넓은 만큼 가볍게 즐기는 일반인부터 전문적인 직업으로 고산을 탐방하는 프로 등산인까지 존재하는 폭넓은 취미이다. 나는 오르락 내리락하고 목표가 분명하지만 힘든, 정유주, 즉 내가 싫어하는 모든 것을 등산이라 칭하기로 했다. 그렇다면 무엇이 등산일까. 궁금하면 『등산』을 눌러보자.";
     }
+
   document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('.info-title').forEach(title => {
     title.addEventListener('click', () => {
