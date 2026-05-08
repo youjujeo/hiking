@@ -31,7 +31,7 @@
 
         /* 왼쪽 사이드바 */
         .sidebar {
-            width: 20%; 
+            width: 18%; 
             min-width: 15.6vw;
             height: 100%;
             background-color: var(--mint-color);
@@ -94,7 +94,7 @@
             background-color: var(--mint-color);
             color: #000;
             height: 8.5vh; 
-            min-width: 8vh;
+            min-width: 12vh;
             word-break: keep-all;
             overflow-wrap: break-word;
             display: flex;
@@ -102,7 +102,7 @@
             align-items: center;
             padding: 0 2vw;
             font-family: 'Font';
-            font-size: 2vw;
+            font-size: 2.3vw;
             white-space: nowrap;
             cursor: pointer;
             animation: slide-up-smooth 0.6s cubic-bezier(0.23, 1, 0.32, 1) both;
@@ -117,7 +117,7 @@
             height: 30vh;
             background-color: var(--mint-color);
             color: #000;
-            padding: 2.3vw 5vw 0 3vw;
+            padding: 2.5vw 5.5vw 0 3vw;
             flex-shrink: 0;
             transition: background-color 0.4s ease;
         }
@@ -150,14 +150,14 @@
         overflow: hidden;
         transition: max-height 0.3s ease-out; 
         font-family: 'Fontt';
-         word-break: keep-all;
+        word-break: keep-all;
         hyphens: none; 
         }
 
         .info-content p {
-        padding: 0.65vh 1.8vh 4vh 1.5vh;
+        padding: 0.65vh 1.8vh 4vh 1.25vh;
         margin: 0;
-        line-height: 1.75;
+        line-height: 1.8;
     
         color: #000000;
         font-family: 'Fontt';
@@ -170,8 +170,10 @@
         max-height: 45vh;
         }
 
-        #def-title { font-size: 2.5vw; margin-bottom: 1vh; font-family: 'Font';}
-        #def-text { font-size: 1vw; line-height: 1.75; 
+        #def-title { font-size: 2.8vw; margin-bottom: 1.5vh; font-family: 'Font';}
+        #def-text { 
+        font-size: 1.02vw; 
+        line-height: 1.83; 
         word-break: keep-all;
         hyphens: none; 
         font-family: 'Fontt';}
@@ -205,7 +207,7 @@
   <div class="info-item">
     <button class="info-title">등산합시다!</button>
     <div class="info-content">
-      <p>이 웹은 내가 정의한 등산의 개념에 맞춰 단어들을 새롭게 정의하는 장소이다. 나는 등산을 오르락 내리락하고 목표가 분명하지만 힘든, 정유주, 즉 내가 싫어하는 모든 것이라고 정의내렸다. 이에 따라 단어들은 등산인 것, 등산 같은 것, 등산인지 모르겠는 것, 등산 같지 않은 것, 등산이 아닌 것으로 분류된다. 등산의 개념, 단어의 종류와 설명까지 이 웹의 모든 텍스트는 오직 내 주관에 따라 작성되었다. </p>
+      <p>이 웹은 내가 정의한 등산의 개념에 맞추어 단어들을 새롭게 정의하는 장소이다. 나는 등산을 오르락 내리락하고 목표가 분명하지만 힘든, 정유주, 즉 내가 싫어하는 모든 것이라고 정의내렸다. 이에 따라 단어들은 등산인 것, 등산 같은 것, 등산인지 모르겠는 것, 등산 같지 않은 것, 등산이 아닌 것으로 분류된다. 등산의 개념, 단어의 종류와 설명까지 이 웹의 모든 텍스트는 오직 내 주관에 따라 작성되었다. </p>
     </div>
   </div>
 
@@ -226,7 +228,7 @@
 
         <div class="info-panel" id="info-panel">
             <div id="def-title">등산</div>
-            <div id="def-text">산에 오르는 것. 취미활동 목적의 놀이, 신체단련을 위한 운동이나 스포츠, 탐험 등의 전반을 아우르는 말이다.<br>한국어의 '등산'은 지칭 범위가 넓다. 등산에서 말하는 '산'이라는 것은 산이라 부르기도 애매한 언덕같은 동네 뒷산부터 극한의 오지인 히말라야 고산까지를 아우르는 광범위한 장소인데, 범위가 넓은 만큼 가볍게 즐기는 일반인부터 전문적인 직업으로 고산을 탐방하는 프로 등산인까지 존재하는 폭넓은 취미이다. 나는 오르락 내리락하고 목표가 분명하지만 힘든, 정유주, 즉 내가 싫어하는 모든 것을 등산이라 칭하기로 했다. 그렇다면 무엇이 등산일까. 궁금하면 『등산』을 눌러보자.
+            <div id="def-text">산에 오르는 것. <br>한국어의 '등산'은 지칭 범위가 넓다. 등산에서 말하는 '산'이라는 것은 산이라 부르기도 애매한 동네 뒷산부터 극한의 오지인 히말라야 고산까지를 아우르는 광범위한 장소인데, 범위가 넓은 만큼 가볍게 즐기는 일반인부터 전문적인 직업으로 고산을 탐방하는 프로 등산인까지 존재하는 폭넓은 취미이다. 나는 오르락 내리락하고 목표가 분명하지만 힘든, 정유주, 즉 내가 싫어하는 모든 것을 등산이라 칭하기로 했다. 그렇다면 무엇이 등산일까. 궁금하면 『등산』을 눌러보자.
         </div>
     </div>
 
@@ -294,7 +296,7 @@
         addLayer();
 
         titleDisp.innerText = "등산";
-        textDisp.innerHTML = "산에 오르는 것. 취미활동 목적의 놀이, 신체단련을 위한 운동이나 스포츠, 탐험 등의 전반을 아우르는 말이다. <br>한국어의 '등산'은 지칭 범위가 넓다. 등산에서 말하는 '산'이라는 것은 산이라 부르기도 애매한 언덕같은 동네 뒷산부터 극한의 오지인 히말라야 고산까지를 아우르는 광범위한 장소인데, 범위가 넓은 만큼 가볍게 즐기는 일반인부터 전문적인 직업으로 고산을 탐방하는 프로 등산인까지 존재하는 폭넓은 취미이다. 나는 오르락 내리락하고 목표가 분명하지만 힘든, 정유주, 즉 내가 싫어하는 모든 것을 등산이라 칭하기로 했다. 그렇다면 무엇이 등산일까. 궁금하면 『등산』을 눌러보자.";
+        textDisp.innerHTML = "산에 오르는 것. <br>한국어의 '등산'은 지칭 범위가 넓다. 등산에서 말하는 '산'이라는 것은 산이라 부르기도 애매한 동네 뒷산부터 극한의 오지인 히말라야 고산까지를 아우르는 광범위한 장소인데, 범위가 넓은 만큼 가볍게 즐기는 일반인부터 전문적인 직업으로 고산을 탐방하는 프로 등산인까지 존재하는 폭넓은 취미이다. 나는 오르락 내리락하고 목표가 분명하지만 힘든, 정유주, 즉 내가 싫어하는 모든 것을 등산이라 칭하기로 했다. 그렇다면 무엇이 등산일까. 궁금하면 『등산』을 눌러보자.";
         infoPanel.style.backgroundColor = "var(--mint-color)";
      
         document.querySelectorAll('.brick').forEach(b => b.classList.remove('active'));
@@ -340,7 +342,7 @@
         availableWords = [...wordDataList];
         infoPanel.style.backgroundColor = "var(--mint-color)";
         titleDisp.innerText = "등산";
-        textDisp.innerHTML = "산에 오르는 것. 취미활동 목적의 놀이, 신체단련을 위한 운동이나 스포츠, 탐험 등의 전반을 아우르는 말이다. <br>한국어의 '등산'은 지칭 범위가 넓다. 등산에서 말하는 '산'이라는 것은 산이라 부르기도 애매한 언덕같은 동네 뒷산부터 극한의 오지인 히말라야 고산까지를 아우르는 광범위한 장소인데, 범위가 넓은 만큼 가볍게 즐기는 일반인부터 전문적인 직업으로 고산을 탐방하는 프로 등산인까지 존재하는 폭넓은 취미이다. 나는 오르락 내리락하고 목표가 분명하지만 힘든, 정유주, 즉 내가 싫어하는 모든 것을 등산이라 칭하기로 했다. 그렇다면 무엇이 등산일까. 궁금하면 『등산』을 눌러보자.";
+        textDisp.innerHTML = "산에 오르는 것. <br>한국어의 '등산'은 지칭 범위가 넓다. 등산에서 말하는 '산'이라는 것은 산이라 부르기도 애매한 동네 뒷산부터 극한의 오지인 히말라야 고산까지를 아우르는 광범위한 장소인데, 범위가 넓은 만큼 가볍게 즐기는 일반인부터 전문적인 직업으로 고산을 탐방하는 프로 등산인까지 존재하는 폭넓은 취미이다. 나는 오르락 내리락하고 목표가 분명하지만 힘든, 정유주, 즉 내가 싫어하는 모든 것을 등산이라 칭하기로 했다. 그렇다면 무엇이 등산일까. 궁금하면 『등산』을 눌러보자.";
     }
 
   document.addEventListener('DOMContentLoaded', () => {
